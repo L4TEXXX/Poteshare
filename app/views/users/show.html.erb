@@ -1,0 +1,27 @@
+
+<div class = account&profile>
+  <table>
+    <tr>
+      <th>ユーザーアイコン</th>
+      
+    </tr>
+    <tr>
+      <th>名前</th>
+      <td><%= @user.name %></td>
+    </tr>
+    <tr>
+      <th>メールアドレス</th>
+      <td><%= @user.email %></td>
+    </tr>
+    <tr>
+      <th>パスワード</th>
+      <td><%= @user.password %></td>
+    </tr>
+  </table>
+  <div>
+    <ul>
+      <li><%= link_to "編集する", edit_user_path(@user)%></li>
+      <li><%= link_to "宿泊先一覧に戻る", "#" %></li>
+    </ul>
+  </div>
+</div>

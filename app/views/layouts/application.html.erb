@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PoteShare</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <div class="left-nav">
+        <%= link_to image_tag("https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png",class:"left-nav-image"), root_path%>
+      </div>
+      <div class="left-nav">
+      <!-- url未入力 -->
+        <%= form_with(class: 'search_form_topleft', method: :get, local:true) do |f| %>
+            <%= f.text_field :search_area, class: 'field',value: params[:search], placeholder: "エリア", class: "topleft-input"%>
+            <%= f.submit '探す'%>
+          <% end %>
+      </div>
+      <div class="left-nav">
+        <%= form_with(class: 'search_form_topleft', method: :get, local:true) do |f| %>
+            <%= f.text_field :search_keyword, class: 'field',value: params[:search], placeholder: "キーワード", class: "topleft-input"%>
+            <%= f.submit '検索'%>
+          <% end %>
+      </div>
+    </header>
+    <%= yield %>
+  </body>
+</html>
