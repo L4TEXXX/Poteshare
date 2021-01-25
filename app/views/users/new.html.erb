@@ -21,7 +21,8 @@
                         <th>必須</th>
                         <td><%= f.text_field :password,class: "form-control", placeholder: "パスワード" %></td>
                     </tr>
-                    <tr>                            <th>必須</th>
+                    <tr>    
+                        <th>必須</th>
                         <td><%= f.password_field :password_confirmation,class: "form-control", placeholder: "パスワード再入力" %></td>
                     </tr>
                  </table>
@@ -29,6 +30,6 @@
                     <input type="submit" value="Sign Up" class="create_btn">
                  </div>
              <% end %>
-                <%= link_to("既にアカウントをお持ちの方はログイン","login_path", class:"other-btn") %>
+                <%= link_to("既にアカウントをお持ちの方はログイン","login_form_path", class:"other-btn") %>
     </div>
 </div>
