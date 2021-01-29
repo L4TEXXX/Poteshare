@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_18_174840) do
+ActiveRecord::Schema.define(version: 2021_01_27_131839) do
+
+  create_table "rooms", force: :cascade do |t|
+    t.string "room_name"
+    t.string "room_PR"
+    t.integer "room_price"
+    t.datetime "start_day"
+    t.datetime "finish_day"
+    t.datetime "room_addres"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
@@ -18,6 +29,7 @@ ActiveRecord::Schema.define(version: 2021_01_18_174840) do
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "image"
   end
 
 end

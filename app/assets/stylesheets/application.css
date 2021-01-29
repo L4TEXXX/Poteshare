@@ -22,3 +22,12 @@
   body{
       margin: 0px;
   }
+
+  .error-message{
+    background-color: #F35500;
+    position: relative;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    color:antiquewhite;
+    border-radius: 1em;
+  }

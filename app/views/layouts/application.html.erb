@@ -28,6 +28,15 @@
             <%= f.submit '検索'%>
           <% end %>
       </div>
+      <div class="header-right">
+        <% if @current_user %>
+          <%= link_to @current_user.name, user_path(@current_user) %>
+          <%= link_to "ログアウト", logout_path, method: :post %>
+        <% else %>
+          <%= link_to "ログイン" ,login_path %>
+          <%= link_to "登録する" , new_user_path %>
+        <% end %>
+      </div>
     </header>
     <%= yield %>
   </body>

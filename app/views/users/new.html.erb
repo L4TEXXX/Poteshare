@@ -3,7 +3,7 @@
         <h2>新しいアカウントを作成</h2>
             <%= form_with model: @user ,url: users_path, local: true do |f| %>
                 <% if @user.errors.any? %>
-                <ul class= "error-messages">
+                <ul class= "error-message">
                     <% @user.errors.full_messages. each do |error| %>
                         <li><%= error %></li>
                     <% end %>
@@ -30,6 +30,6 @@
                     <input type="submit" value="Sign Up" class="create_btn">
                  </div>
              <% end %>
-                <%= link_to("既にアカウントをお持ちの方はログイン","login_form_path", class:"other-btn") %>
+                <%= link_to("既にアカウントをお持ちの方はログイン","/login", class:"other-btn") %>
     </div>
 </div>

@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  room_name: MyString
+  room_PR: MyString
+  room_price: 1
+  start_day: 2021-01-27 22:18:39
+  finish_day: 2021-01-27 22:18:39
+  room_addres: 2021-01-27 22:18:39
+
+two:
+  room_name: MyString
+  room_PR: MyString
+  room_price: 1
+  start_day: 2021-01-27 22:18:39
+  finish_day: 2021-01-27 22:18:39
+  room_addres: 2021-01-27 22:18:39
