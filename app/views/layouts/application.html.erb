@@ -15,29 +15,31 @@
       <div class="left-nav">
         <%= link_to image_tag("https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png",class:"left-nav-image"), root_path%>
       </div>
-      <div class="left-nav">
       <!-- url未入力 -->
-        <%= form_with(class: 'search_form_topleft', method: :get, local:true) do |f| %>
-            <%= f.text_field :search_area, class: 'field',value: params[:search], placeholder: "エリア", class: "topleft-input"%>
-            <%= f.submit '探す'%>
-          <% end %>
-      </div>
-      <div class="left-nav">
-        <%= form_with(class: 'search_form_topleft', method: :get, local:true) do |f| %>
-            <%= f.text_field :search_keyword, class: 'field',value: params[:search], placeholder: "キーワード", class: "topleft-input"%>
-            <%= f.submit '検索'%>
-          <% end %>
-      </div>
+          <div class="left-nav-field">
+            <%= form_with(class: 'search_form_topleft', method: :get, local:true) do |f| %>
+              <%= f.text_field :search_area, class: 'field',value: params[:search], placeholder: "エリア", class: "topleft-input"%>
+            <% end %>
+            <%= form_with(class: 'search_form_topleft', method: :get, local:true) do |f| %>
+              <%= f.text_field :search_keyword, class: 'field',value: params[:search], placeholder: "キーワード", class: "topleft-input"%>
+            <% end %>
+          </div>
       <div class="header-right">
         <% if @current_user %>
-          <%= link_to @current_user.name, user_path(@current_user) %>
-          <%= link_to "ログアウト", logout_path, method: :post %>
+          <%= link_to @current_user.name, user_path(@current_user), {class: "nav-link"} %>
+          <%= link_to "ログアウト", logout_path, {method: :post, class: "nav-link"} %>
+          <%= link_to "ルーム登録" , new_room_path, {class: "nav-link"} %>
+          <%= link_to "登録済ルーム" , "/rooms", {class: "nav-link"} %>
+          <%= link_to "予約済ルーム" , reservations_path ,{class: "nav-link"} %>
         <% else %>
-          <%= link_to "ログイン" ,login_path %>
-          <%= link_to "登録する" , new_user_path %>
+          <%= link_to "ログイン" ,login_path, {class: "nav-link"} %>
+          <%= link_to "登録する" , new_user_path, {class: "nav-link"} %>
         <% end %>
       </div>
     </header>
     <%= yield %>
+    <footer>
+      <p>© 2020 POTEPAN.INC.</p>
+    </footer>
   </body>
 </html>

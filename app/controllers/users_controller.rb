@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
       redirect_to root_path
-      flash[:success] = "ログインしました"
+      flash[:notice] = "ログインしました"
     else
       @error_message = "メールアドレスまたはパスワードが間違っています"
       render "login_form"
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
 
   def logout
     session[:user_id] = nil
-    flash[:success] = "ログアウトしました"
+    flash[:notice] = "ログアウトしました"
     redirect_to login_path
   end
 
@@ -48,16 +48,25 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
+    if params[:image]
+      @user.image = "#{@user.id}.jpg"
+      File.binwrite("public/user_images/#{@user.image}", params[:image].read)
+    end
     if @user.update(user_params)
-      flash[:success] = "登録情報を更新しました"
+      flash[:notice] = "登録情報を更新しました"
       redirect_to user_path(@user)
     else
       render "edit"
+    end
+  end
+
+  def myrooms
+    @user = User.find(params[:id])
   end
 
 
   private
   def user_params
-    params.require(:user).permit(:name,:email,:password,:password_confirmation,:image)
+    params.permit(:user_id,:name,:email,:password,:password_confirmation,:image)
   end
 end

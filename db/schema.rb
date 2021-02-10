@@ -10,17 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_27_131839) do
+ActiveRecord::Schema.define(version: 2021_02_06_024830) do
+
+  create_table "reservations", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "room_id", null: false
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.integer "num_people"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["room_id"], name: "index_reservations_on_room_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
+  end
 
   create_table "rooms", force: :cascade do |t|
     t.string "room_name"
-    t.string "room_PR"
+    t.text "room_PR"
     t.integer "room_price"
     t.datetime "start_day"
     t.datetime "finish_day"
-    t.datetime "room_addres"
+    t.string "room_address"
+    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "images"
+    t.index ["user_id"], name: "index_rooms_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -32,4 +47,7 @@ ActiveRecord::Schema.define(version: 2021_01_27_131839) do
     t.string "image"
   end
 
+  add_foreign_key "reservations", "rooms"
+  add_foreign_key "reservations", "users"
+  add_foreign_key "rooms", "users"
 end

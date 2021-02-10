@@ -1,2 +1,33 @@
-<h1>Rooms#new</h1>
-<p>Find me in app/views/rooms/new.html.erb</p>
+<div class="room-form">
+    <h2>基本情報</h2>
+    <h3>ルーム情報登録</h3>
+    <%= form_with url: rooms_path ,local:true do |f| %>
+    <table>
+        <tr>
+            <th><%= f.label :room_name ,"ルーム名" %></th>
+            <td><%= f.text_field :room_name %></td>
+        </tr>
+        <tr>
+            <th><%= f.label :room_PR ,"ルーム紹介" %></th>
+            <td><%= f.text_area :room_PR %></td>
+        </tr>
+        <tr>
+           <th><%= f.label :room_price ,"料金" %></th>
+            <td><%= f.text_field :room_price %></td>
+        </tr>
+         <tr>
+            <th><%= f.label :room_address ,"住所" %></th>
+            <td><%= f.text_field :room_address %></td>
+         </tr>
+    </table>
+     <span class = "image">
+      <%= f.file_field :images %>
+    </span>
+    <div>
+      <ul>
+        <li><%= f.submit "登録" %></li>
+      </ul>
+    </div>
+    <% end %>
+</div>
+
