@@ -47,7 +47,7 @@
 
 //部屋showのcss
 
-.room-show{
+.show{
     position: relative;
     width: 100%;
     padding: 30px 0;
@@ -55,42 +55,42 @@
     margin-left:auto;
 }
 
-.room-show img{
+.show img{
     width: 100%;
     object-fit: cover;
 }
 
-.room-show-profile{
+.show-profile{
     display: flex;
     justify-content: space-between;
 }
 
-.room-show-icon{
+.show-icon{
     padding: 20px;
 }
 
-.room-show-icon .host-icon{
+.show-icon .host-icon{
     width: 80px;
     height: 80px;
     object-fit: cover;
     border-radius: 50px;
 }
 
-.room-show-name{
+.show-name{
     padding: 20px;
 }
 
-.room-name{
+.name{
     font-size: 20px;
     font-weight: bold;
     padding: 10px 0;
 }
 
-.room-address{
+.ddress{
     font-size: 14px;
 }
 
-.room-content{
+.content{
     text-align: center;
     font-size: 25px;
     line-height: 30px;
@@ -100,7 +100,7 @@
     word-break: break-all;
 }
 
-.room-show-btn{
+.show-btn{
   position: absolute;
   left: 190px;
 }

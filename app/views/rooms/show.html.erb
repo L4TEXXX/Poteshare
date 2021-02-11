@@ -1,16 +1,16 @@
-<div class="container room-show">
-    <div class="room-show-detail">
-        <div class="room-show-image">
+<div class="container show">
+    <div class="show-detail">
+        <div class="show-image">
             <%= image_tag "/room_images/#{@room.images}" %>
         </div>
-        <div class="room-show-profile">
-            <div class="room-show-name">
-                <p class="room-name"><%= @room.room_name %></p>
-                <p class="room-addres"><%= @room.room_address %></p>
+        <div class="show-profile">
+            <div class="show-name">
+                <p class="name"><%= @room.room_name %></p>
+                <p class="addres"><%= @room.room_address %></p>
             </div>
         </div>
-        <p class="room-content"><%= @room.room_PR %></p>
-        <button class="room-show-btn create-btn">
+        <p class="content"><%= @room.room_PR %></p>
+        <button class="show-btn create-btn">
             <%= link_to "予約する", new_room_reservation_path(@room) ,class: "btn-font" %>
         </button>
     </div> 

@@ -1,27 +1,19 @@
-
-<div class = account&profile>
-  <table>
-    <tr>
-      <th>ユーザーアイコン</th>
-      <td><%= image_tag "/user_images/#{@user.image}", class: "user-icon" %></td>
-    </tr>
-    <tr>
-      <th>名前</th>
-      <td><%= @user.name %></td>
-    </tr>
-    <tr>
-      <th>メールアドレス</th>
-      <td><%= @user.email %></td>
-    </tr>
-    <tr>
-      <th>パスワード</th>
-      <td><%= @user.password %></td>
-    </tr>
-  </table>
-  <div>
-    <ul>
-      <li><%= link_to "編集する", edit_user_path(@user)%></li>
-      <li><%= link_to "宿泊先一覧に戻る", "#" %></li>
-    </ul>
-  </div>
+<div class="container show">
+    <div class="show-detail">
+        <div class="show-image">
+            <img src="<%= "/user_images/#{@user.image}" %>%">
+        </div>
+        <div class="show-profile">
+            <div class="show-name">
+                <p class="name"><%= @user.name %></p>
+                <p class="addres"><%= @user.email %></p>
+            </div>
+        </div>
+        <p class="content"><%= @user.intro %></p>
+        <button class="show-btn create-btn">
+            <%= link_to "編集する", edit_user_path(@user) ,class: "btn-font" %>
+        </button>
+    </div> 
+    
+  
 </div>
