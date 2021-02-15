@@ -13,19 +13,16 @@ class RoomsController < ApplicationController
     if @room.save
       flash[:notice] = "ルーム登録しました"
       redirect_to room_path(@room)
-      if params[:images]
-        @room.images = "#{@room.id}.jpg"
-        image = params[:images]
-        File.binwrite("public/room_images/#{@room.images}",image.read)
-      else
-        @room.images = "default_room.jpg"
-      end
     else
       @error_message = "必要な項目を入力してください"
       render "new"
     end
   end
   
+  def search
+    @rooms = Room.search_area(params[:search_area])
+    @rooms = Room.search_area(params[:search_keyword])
+  end
 
   def show
     @room = Room.find(params[:id])

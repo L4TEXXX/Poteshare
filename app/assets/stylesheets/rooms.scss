@@ -40,12 +40,17 @@
 
 .room-index img{
     width: 240px;
-    height: 140px;
-    object-fit: covers;
+    height: auto;
+    object-fit: cover;
 }
 
 
-//部屋showのcss
+//部屋ユーザのshowのcss
+
+.user-show-image{
+    max-width: 200px;
+    height: 200px;
+}
 
 .show{
     position: relative;
@@ -59,6 +64,8 @@
     width: 100%;
     object-fit: cover;
 }
+
+
 
 .show-profile{
     display: flex;
@@ -107,4 +114,18 @@
 
 .btn-font{
     color:white
+}
+
+//部屋登録css
+.form-text{
+    text-align: center;
+    line-height: 60px;
+}
+
+.form-text h2{
+    color: #2759c5;
+}
+
+.form-text h3{
+    color: #2759c5;
 }

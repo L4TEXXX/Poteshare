@@ -8,4 +8,6 @@ class User < ApplicationRecord
     #validation
     has_secure_password
     
+    #carrierwave
+    mount_uploader :image, ImageUploader
 end

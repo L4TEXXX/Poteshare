@@ -17,10 +17,10 @@
       </div>
       <!-- url未入力 -->
           <div class="left-nav-field">
-            <%= form_with(class: 'search_form_topleft', method: :get, local:true) do |f| %>
+            <%= form_with(url: search_path,class: 'search_form_topleft', method: :get, local:true) do |f| %>
               <%= f.text_field :search_area, class: 'field',value: params[:search], placeholder: "エリア", class: "topleft-input"%>
             <% end %>
-            <%= form_with(class: 'search_form_topleft', method: :get, local:true) do |f| %>
+            <%= form_with(url: search_path,class: 'search_form_topleft', method: :get, local:true) do |f| %>
               <%= f.text_field :search_keyword, class: 'field',value: params[:search], placeholder: "キーワード", class: "topleft-input"%>
             <% end %>
           </div>

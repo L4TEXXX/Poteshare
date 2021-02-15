@@ -1,7 +1,11 @@
 <div class="container show">
     <div class="show-detail">
         <div class="show-image">
-            <%= image_tag "/room_images/#{@room.images}" %>
+            <% if @room.images? %>
+                <%= image_tag @room.images.url , class: "room-image" %>
+            <% else %>
+                <%= image_tag "default_room.jpg", class: "room-image" %>
+           <% end %>
         </div>
         <div class="show-profile">
             <div class="show-name">

@@ -1,7 +1,11 @@
 <div class="container show">
     <div class="show-detail">
-        <div class="show-image">
-            <img src="<%= "/user_images/#{@user.image}" %>%">
+        <div class="user-show-image">
+           <% if @user.image? %>
+                <%= image_tag @user.image.url , class: "icon-image" %>
+            <% else %>
+                <%= image_tag "default_icon.jpg", class: "icon-image" %>
+           <% end %>
         </div>
         <div class="show-profile">
             <div class="show-name">

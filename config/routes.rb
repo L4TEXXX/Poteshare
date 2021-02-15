@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get "/login", to: 'users#login_form'
   post "/login", to: "users#login"
   post "/logout", to: "users#logout"
-  post "/users/:id/update" => "users#update"
+  get "/search",to: "rooms#search"
   resources :users
   resources :rooms do
     resources :reservations, only: [:new, :create]

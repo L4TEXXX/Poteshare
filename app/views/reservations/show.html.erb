@@ -1,34 +1,20 @@
-<div class = post_show>
-  <table>
-    <tr>
-      <th>ルーム名</th>
-      <td><%= @room.room_name %></td>
-      </tr>
-    <tr>
-      <th>使用日数</th>
-      <td><%= (@reservation.end_date.to_date - @reservation.start_date.to_date).to_i %> 日</td>
-    </tr>
-    <tr>
-      <th>開始日</th>
-      <td><%= @reservation.start_date %></td>
-    </tr>
-    <tr>
-      <th>終了日</th>
-      <td><%= @reservation.end_date %></td>
-    </tr>
-    <tr>
-      <th>宿泊人数</th>
-      <td><%= @reservation.num_people %></td>
-    </tr>
-    <tr>
-      <th>合計料金</th>
-      <td>¥<%= @room.room_price * ((@reservation.end_date.to_date - @reservation.start_date.to_date).to_i) %></td>
-    </tr>
-  </table>
-  <div>
-    <ul>
-      <li><%= link_to "予約を変更する", "#"%></li>
-      <li><%= link_to "予約一覧に戻る", reservations_path%></li>
-    </ul>
-  </div>
-</div>
+<div class="container show">
+    <div class="show-detail">
+        <div class="show-image">
+            <% if @reservation.room.images? %>
+                <%= image_tag @reservation.room.images.url , class: "room-image" %>
+            <% else %>
+                <%= image_tag "default_room.jpg", class: "room-image" %>
+           <% end %>
+        </div>
+        <div class="show-profile">
+            <div class="show-name">
+                <p class="name"><%= @reservation.room.room_name %></p>
+                <p class="addres"><%= @reservation.room.room_address %></p>
+            </div>
+        </div>
+        <p class="content"><%= @reservation.room.room_PR %></p>
+        <button class="show-btn create-btn">
+            <%= link_to "予約済みルーム一覧", reservations_path ,class: "btn-font" %>
+        </button>
+</div> 

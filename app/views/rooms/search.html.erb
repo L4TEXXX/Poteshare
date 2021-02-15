@@ -1,5 +1,5 @@
 <div class="room-index">
-    <h2>登録済みルーム</h2>
+    <h2>検索結果</h2>
     <table>
         <thead>
             <tr align="center">
@@ -11,7 +11,7 @@
             </tr>
         </thead>
         <tbody>
-            <% @room.each do |room| %>
+            <% @rooms.each do |room| %>
                 <tr>
                     <td><%= image_tag room.images.to_s,class: "index-image" %></td>
                     <td><%= link_to room.room_name, room_path(room.id) %></td>

@@ -1,25 +1,24 @@
-<div class = reservation-form>
-  <h2>予約項目を入力する</h2>
+<div class = "new container reservation">
+  <div class="form-text">
+   <h2>予約項目を入力する</h2>
+  </div>
   <%= form_with url: @reservation, url: {action: 'create'},local: true do |f| %>
-
-    <table>
-      <tr>
-        <th><%= f.label :start_date ,"開始日" %></th>
-        <td><%= f.date_field :start_date %></td>
-      </tr>
-      <tr>
-        <th><%= f.label :end_date ,"終了日" %></th>
-        <td><%= f.date_field :end_date %></td>
-      </tr>
-      <tr>
-        <th><%= f.label :num_people ,"人数" %></th>
-        <td><%= f.number_field :num_people %></td>
-      </tr>
-    </table>
-    <div>
-      <ul>
-        <li><%= f.submit "上記の内容で予約する" %></li>
-      </ul>
-    </div>
+     <table class="form-table">
+       <tr>
+         <th><%= f.label :start_date ,"開始日" %></th>
+         <td><%= f.date_field :start_date %></td>
+       </tr>
+       <tr>
+         <th><%= f.label :end_date ,"終了日" %></th>
+         <td><%= f.date_field :end_date %></td>
+       </tr>
+       <tr>
+         <th><%= f.label :num_people ,"人数" %></th>
+         <td><%= f.number_field :num_people %></td>
+       </tr>
+     </table>
+     <div class="new-form">
+         <%= f.submit "上記の内容で予約する" ,class: "create-btn" %>
+     </div>
   <% end %>
 </div>

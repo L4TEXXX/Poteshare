@@ -58,7 +58,20 @@ new-layout{
 }
 
 // edit
-.user-edit{
+.new {
     margin-left: auto;
     margin-right:auto;
+}
+
+.new-form{
+    text-align: center;
+}
+
+.form-table{
+    margin-right: auto;
+    margin-left: auto;
+    
+}
+.form-table tr{
+    line-height: 4rem;
 }

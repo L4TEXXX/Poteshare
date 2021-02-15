@@ -1,8 +1,10 @@
-<div class="room-form">
-    <h2>基本情報</h2>
-    <h3>ルーム情報登録</h3>
+<div class="new container">
+    <div class="form-text">
+        <h2>基本情報</h2>
+        <h3>ルーム情報登録</h3>
+    </div>
     <%= form_with url: rooms_path ,local:true do |f| %>
-    <table>
+    <table class="form-table">
         <tr>
             <th><%= f.label :room_name ,"ルーム名" %></th>
             <td><%= f.text_field :room_name %></td>
@@ -19,14 +21,13 @@
             <th><%= f.label :room_address ,"住所" %></th>
             <td><%= f.text_field :room_address %></td>
          </tr>
+         <tr>
+            <th><%= f.label :images ,"画像" %></th>
+            <td><%= f.file_field :images %></td>
+         </tr>
     </table>
-     <span class = "image">
-      <%= f.file_field :images %>
-    </span>
-    <div>
-      <ul>
-        <li><%= f.submit "登録" %></li>
-      </ul>
+    <div class="new-form">
+      <input type="submit" value="登録する" class="create-btn">
     </div>
     <% end %>
 </div>

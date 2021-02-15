@@ -6,7 +6,7 @@
                     <h3>Potepan Shareでまだ体験したことのない旅をしよう</h3>
                     <p>エリア</p>
                     <!-- urlまだ未入力 -->
-                    <%= form_with(class: 'search_form', method: :get, local:true) do |f| %>
+                    <%= form_with(url: search_path,class: 'search_form', method: :get, local:true) do |f| %>
                         <%= f.text_field :search_area, class: 'search-field',value: params[:search], placeholder: "東京" %></br>
                         <%= f.submit '探す', class: "main-btn" %>
                     <% end %>
@@ -19,19 +19,19 @@
             <h1 class="section-title">おすすめのエリア</h1>
             <div class="row area-items">
                 <div class="area-box">
-                    <span>東京</span>
+                    <span><%= link_to "東京", "/search?serch=東京&commit=探す" %></span>
                     <img src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_tokyo.jpg" alt="tokyo">
                 </div>
                 <div class="area-box">
-                    <span>大阪</span>
+                    <span><%= link_to "大阪", "/search?serch=大阪&commit=探す" %></span>
                     <img src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_osaka.jpg" alt="osaka">
                 </div>
                 <div class="area-box">
-                    <span>京都</span>
+                    <span><%= link_to "京都", "/search?serch=京都&commit=探す" %></span>
                     <img src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_kyoto.jpg" alt="kyoto">
                 </div>
                 <div class="area-box">
-                    <span>札幌</span>
+                    <span><%= link_to "札幌", "/search?serch=札幌&commit=探す" %></span>
                     <img src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_sapporo.jpg" alt="sapporo">
                 </div>
             </div>
