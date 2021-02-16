@@ -1,0 +1,25 @@
+<div class="room-index">
+    <h2>検索結果</h2>
+    <table>
+        <thead>
+            <tr align="center">
+                <th>ルーム画像</th>
+                <th>ルーム名</th>
+                <th>ルーム紹介</th>
+                <th>料金</th>
+                <th>作成日</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @rooms.each do |room| %>
+                <tr>
+                    <td><%= image_tag room.images.to_s,class: "index-image" %></td>
+                    <td><%= link_to room.room_name, room_path(room.id) %></td>
+                    <td><%= room.room_PR %></td>
+                    <td><%= room.room_price %></td>
+                    <td><%= room.created_at.to_s(:datetime_jp) %></td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>

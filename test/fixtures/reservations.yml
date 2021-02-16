@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  room: one
+  start_date: 2021-02-06 11:48:30
+  end_date: 2021-02-06 11:48:30
+  num_people: 1
+
+two:
+  user: two
+  room: two
+  start_date: 2021-02-06 11:48:30
+  end_date: 2021-02-06 11:48:30
+  num_people: 1

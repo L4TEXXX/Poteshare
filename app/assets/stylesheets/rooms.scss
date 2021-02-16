@@ -1,0 +1,131 @@
+// Place all the styles related to the rooms controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+//ルーム登録済みのcss
+.room-index{
+    padding: 30px 60px;
+    position: relative;
+}
+
+.room-index h2{
+    font-size: 1.4rem;
+    padding-bottom: 1.5rem;
+}
+
+.table{
+    border-collapse: collapse;
+}
+
+.room-index table{
+    max-width: 800px;
+}
+
+.room-index thead th{
+    padding: 8px 15px;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.room-index thead tr{
+    border-top: 1px solid #262f35;
+    border-bottom: 1px solid #282e33;
+}
+
+.room-index tbody td{
+    padding: 13px;
+}
+
+
+
+.room-index img{
+    width: 240px;
+    height: auto;
+    object-fit: cover;
+}
+
+
+//部屋ユーザのshowのcss
+
+.user-show-image{
+    max-width: 200px;
+    height: 200px;
+}
+
+.show{
+    position: relative;
+    width: 100%;
+    padding: 30px 0;
+    margin-right:auto;
+    margin-left:auto;
+}
+
+.show img{
+    width: 100%;
+    object-fit: cover;
+}
+
+
+
+.show-profile{
+    display: flex;
+    justify-content: space-between;
+}
+
+.show-icon{
+    padding: 20px;
+}
+
+.show-icon .host-icon{
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50px;
+}
+
+.show-name{
+    padding: 20px;
+}
+
+.name{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+.ddress{
+    font-size: 14px;
+}
+
+.content{
+    text-align: center;
+    font-size: 25px;
+    line-height: 30px;
+    padding: 30px 10px;
+    border-top: 1px solid #eaedef;
+    border-bottom: 1px solid #eaedef;
+    word-break: break-all;
+}
+
+.show-btn{
+  position: absolute;
+  left: 190px;
+}
+
+.btn-font{
+    color:white
+}
+
+//部屋登録css
+.form-text{
+    text-align: center;
+    line-height: 60px;
+}
+
+.form-text h2{
+    color: #2759c5;
+}
+
+.form-text h3{
+    color: #2759c5;
+}

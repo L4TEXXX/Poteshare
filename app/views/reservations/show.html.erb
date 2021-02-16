@@ -1,0 +1,20 @@
+<div class="container show">
+    <div class="show-detail">
+        <div class="show-image">
+            <% if @reservation.room.images? %>
+                <%= image_tag @reservation.room.images.url , class: "room-image" %>
+            <% else %>
+                <%= image_tag "default_room.jpg", class: "room-image" %>
+           <% end %>
+        </div>
+        <div class="show-profile">
+            <div class="show-name">
+                <p class="name"><%= @reservation.room.room_name %></p>
+                <p class="addres"><%= @reservation.room.room_address %></p>
+            </div>
+        </div>
+        <p class="content"><%= @reservation.room.room_PR %></p>
+        <button class="show-btn create-btn">
+            <%= link_to "予約済みルーム一覧", reservations_path ,class: "btn-font" %>
+        </button>
+</div> 
